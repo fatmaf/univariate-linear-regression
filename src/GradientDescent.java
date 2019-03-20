@@ -2,7 +2,7 @@ import java.util.List;
 
 public class GradientDescent {
 
-    public static final String DATA_FILE = "data/example_small.csv";//"data/MacdonellDF.csv";
+    public static final String DATA_FILE = "data/q1.csv";//"data/MacdonellDF.csv";
 
     public static void main(String[] args) {
 
@@ -10,7 +10,7 @@ public class GradientDescent {
         // Data and Graph setup.
         // -------------------------------------------------
         List<List<Double>> data = Data.dataFrom(DATA_FILE);
-        Plot plt = new Plot("Height vs Finger Length", "Height", "Finger Length", data);
+        Plot plt = new Plot("x vs y", "x", "y", data);
         sleep(500);
 
         // -------------------------------------------------
@@ -24,7 +24,7 @@ public class GradientDescent {
         double w0 = 0;
 
         // Learning rate
-        double alpha = 0.0001;
+        double alpha = 0.000000019; //0.00000002 (nicely jumps so fun to look at);
 
         // Main Gradient Descent Function for Linear Regression
         for(int i = 0; i < epochs; i++) {
